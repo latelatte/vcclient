@@ -17,7 +17,7 @@ RUN git clone https://github.com/latelatte/vcclient.git
 
 RUN chmod 0777 /vcclient/server
 WORKDIR /vcclient/server
-RUN pip install numpy==1.23.5 \
+RUN pip install --default-timeout=1000 numpy==1.23.5 \
         && pip install pyworld==0.3.3 --no-build-isolation \
         && pip install -r requirements.txt
 
